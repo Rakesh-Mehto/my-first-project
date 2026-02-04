@@ -2,7 +2,12 @@
 #include<stdlib.h>
 #define MAX 10
 int stack[MAX];
-int top= -1;
+int top = -1;
+
+void Push();
+void Pop();
+void Display();
+
 int main()
 {
     int choice;
@@ -12,55 +17,47 @@ int main()
         scanf("%d",&choice);
         switch (choice)
         {
-            case 1: push(); break;
-            case 2: Display(); break;
-            case 3: Pop(); break;
+            case 1: Push(); break;
+            case 2: Pop(); break;
+            case 3: Display(); break;
             case 4: Exit(); break;
         }
-    } while (choice!=4);
+    } while (choice != 4);
+    getch();
 }
-push()
+void Push()
 {
     int n;
-    if(top == MAX-1)
+    if(top == MAX-1){
     printf("\nStack is overflow !!");
-    else{
-        printf("\n Enter an element:");
+    } else{
+        printf("\nEnter an element:");
         scanf("%d",&n);
         top++;
-        stack[top]=n;
+        stack[top] = n;
 
     }
 }
-pop()
+void Pop()
 {
     int n;
-    if (top == -1)
+    if (top == -1){
     printf("\nStack is empty !!");
-    else{
-        n=stack[top];
+    } else{
+        n = stack[top];
         top--;
         printf("\nPoped element is %d",n); 
     }
 }
-display()
+void Display()
 {
     int i;
-    if(top == -1)
+    if(top == -1){
     printf("\n Stack is empty !!");
-    else{
+    } else{
         printf("\nElement of stack:");
-        for(i=top; i>=0; i--)
+        for(i = top; i >= 0; i--)
         printf("\n%d",stack[i]);
 
     }
-}
-tem()
-{
-    int i;
-    for(i=0; i<=5; i++)
-    {
-        printf("\n%d",stack[i]);
-    }
-}
 }
