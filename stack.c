@@ -18,7 +18,6 @@ int main()
             case 4: Exit(); break;
         }
     } while (choice!=4);
-    getch();
 }
 push()
 {
